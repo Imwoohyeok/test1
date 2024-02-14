@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+<script>
+function fn_test1() {
+	alert("안녕?");
+}
+function fn_test2() {
+	alert("잘가~");
+}
+
+// 매개변수 : 함수안에 세팅되어 외부 데이터 값을 받는 변수
+function fn_test3(name) {
+	alert(name + "안녕?");
+}
+
+
+</script>
+ <body>
+	
+  <button type="button" onclick="fn_test1()">안녕</button>	
+	
+  <button type="button" onclick="fn_test2()">잘가</button>
+
+  <button type="button" onclick="fn_test3('홍길동')">안녕</button>
+
+	
+ </body>
+</html>

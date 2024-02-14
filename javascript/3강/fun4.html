@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>func input</title>
+ </head>
+
+ <script>
+
+function fn_title(){
+				// 현재창.폼이름.상자이름.값
+	let title = document.frm.title.value;
+	alert(title);
+}
+function fn_result1(){
+	let n1 = document.frm.n1.value;
+	let n2 = document.frm.n2.value;
+	let result = Number(n1) + Number(n2);
+	
+	document.frm.result.value = result;
+	/* alert(n1 + " + " + n2 + " = " + result); */
+
+}
+
+function fn_result2(){
+	let n1 = document.frm.n1.value;
+	let n2 = document.frm.n2.value;
+	let result = Number(n1) - Number(n2);
+
+	document.frm.result.value = result;
+	/* alert(n1 + " - " + n2 + " = " + result); */
+
+}
+
+function fn_result3(){
+	let n1 = document.frm.n1.value;
+	let n2 = document.frm.n2.value;
+	let result = Number(n1) * Number(n2);
+
+	document.frm.result.value = result;
+	/* alert(n1 + " x " + n2 + " = " + result); */
+
+}
+
+function fn_result4(){
+	let n1 = document.frm.n1.value;
+	let n2 = document.frm.n2.value;
+	let result = Number(n1) / Number(n2);
+	
+	document.frm.result.value = result;
+	/* alert(n1 + " / " + n2 + " = " + result); */
+
+}
+
+
+
+ </script>
+
+ <body>
+ <form name="frm" method="post" action="">
+
+ 제목 <input type = "text" name="title">
+	 <button type= "button" onclick="fn_title()">전송</button>
+
+ <hr>
+
+<!-- 2 + 3 = 5-->
+1.  <input type = "text" name="n1" style="width:50px;">
+ 	+
+2.  <input type = "text" name="n2" style="width:50px;">
+	=
+	<input type = "text" name="result" style="width:100px;">
+	<br><br>
+	<button type= "button" onclick="fn_result1()">덧셈</button>
+	<button type= "button" onclick="fn_result2()">뺄셈</button>
+	<button type= "button" onclick="fn_result3()">곱셈</button>
+	<button type= "button" onclick="fn_result4()">나눗셈</button>
+</form>
+ </body>
+</html>

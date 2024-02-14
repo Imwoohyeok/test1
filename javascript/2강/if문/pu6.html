@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>7의 배수</title>
+ </head>
+ <script>
+ // 짝수, 홀수 -- 11/2 -->1(홀수) ,, 10/2 --> 0 (짝수)
+ var number = prompt("숫자를 입력해주세요","");
+ var result = number % 2;
+	if (result == 1) {
+		document.write(number + "는 홀수입니다.");
+	} else if (result == 0){
+		document.write(number + "는 짝수입니다.");
+	}
+ document.write("<br>");
+
+	if (number % 2 == 1) {
+		document.write(number + "는 홀수입니다.");
+	} else if (number % 2 == 0){
+		document.write(number + "는 짝수입니다.");
+	}
+ document.write("<br>");
+ 
+ // 7의 배수
+ var number = prompt("7의 배수를 입력해주세요.","");
+  if (number%7 == 0) {
+	document.write(number + "는 7의 배수입니다.");
+  } else {
+	document.write(number + "는 7의 배수가아닙니다.");
+  }
+
+ </script>
+ <body>
+  
+ </body>
+</html>

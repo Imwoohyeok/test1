@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+.button_1 {
+	background-color:#66cc33;
+	color:#ffffff;
+	width:100px;
+	height:30px;
+	border:1px solid #ccc;
+
+}
+.button_2 {
+	background-color:#595959;
+	color:#ffffff;
+	width:60px;
+	height:30px;
+	border:1px solid #ccc;
+}
+
+ </style>
+
+ <script>
+function fn_action() {
+	if(document.frm.email.value == "") {
+		alert("이메일을 입력해주세요.");
+		document.frm.name.focus();
+		return false;
+	}
+}
+
+ </script>
+ <body>
+  <h2>회원정보 찾기</h2>
+   <hr>
+ <form name="frm" method="post" action="memberWriteSave.jsp">
+<table border="0">
+	<tr>
+		<td>
+		회원가입 시 등록하신 이메일 주소를 입력해 주세요.
+		</td>
+	</tr>
+	<tr>
+		<td>
+		해당 이메일로 아이디와 비밀번호 정보를 보내드립니다.
+		</td>
+	</tr>
+	<tr>
+		<td>
+		E-mail주소 
+		<input type="text" name="email" value="" size="50" autofocus> 
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<img src="c:/images/a1.PNG" width="150" height="100">
+		<textarea name="" cols="20" rows="6"></textarea> <br>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		지문등록방지 숫자를 순서대로 입력하세요.<br><br>
+		</td>
+	</tr>
+	
+
+</table>
+
+<div style="text-align:center; width:400px;">
+<button type="submit" class="button_1" onclick="fn_action(); return false;">
+확인</button>
+<button type="button" class="button_2" onclick="self.close()">창닫기</button>  
+	
+</div>
+
+
+
+</form>
+ </body>
+</html>

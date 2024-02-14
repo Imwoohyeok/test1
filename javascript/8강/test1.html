@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+function fn_action() {
+	var userid1  = document.frm.userid.value;
+	var userid2  = document.getElementById("userid");
+	var username = document.getElementById("username");
+	var gender   = document.getElementsByName("gender");
+
+	if (gender[0].checked == false && 
+		gender[1].checked == false ) {
+			alert("성별을 입력해주세요.");
+	}
+	//alert(userid1 + "," + username);
+}
+ </script>
+
+ <body>
+  <form name="frm">
+아이디 <input type="text" id="userid" name="userid"><br>
+이름 <input type="text" id="username" name="username"><br>
+성별 <input type="radio" id="gender" name="gender" value="M"> 남
+	<input type="radio" id="gender" name="gender" value="F"> 여 <br>
+<button type="button" value="전송" onclick="fn_action()">전송</button>
+
+  </form>
+
+ </body>
+</html>

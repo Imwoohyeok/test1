@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+function fn_sum1(a,b) {
+
+	let sum = a+b;
+	alert("결과 : " + sum);
+}
+function fn_sum2(a,b,c) {
+
+	let sum = a+b+c;
+	alert("결과 : " + sum);
+}
+function fn_size(num) {
+	// 1평 -> 3.3제곱미터
+	let size1 = num;
+	let size2 = Math.round(size1/3.3);
+	alert(size1 + "제곱미터는 " + size2 + "평입니다.");
+}
+
+ </script>
+ <body>
+  
+  <button type="button" onclick="fn_sum1(10,20)">연산1</button>
+  <button type="button" onclick="fn_sum2(10,20,30)">연산2</button>
+   <button type="button" onclick="fn_size(200)">평수 구하기</button>
+
+ </body>
+</html>

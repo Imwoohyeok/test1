@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+
+var email ="abcnaver.com";
+	// 1. @ 존재유무
+	if(email.indexOf("@") > -1 ) {  //존재함
+		document.write("올바른 이메일 입니다.");
+	} else {
+		document.write("올바른 이메일이 아닙니다.");
+	}
+	document.write("<hr>");
+
+
+	// 2. naver를 korea 로 바꾸어 출력
+	document.write( email.replace("naver","korea") );
+	document.write("<hr>");
+
+
+	// 3. @ 를 구분자로 나누어 아이디/도메인 출력
+let array = email.split("@");
+	document.write("아이디 : " + array[0] + "<br>");
+	document.write("도메인 : " + array[1]);
+	document.write("<hr>");
+
+
+	// 4. 아이디의 길이를 출력
+	document.write("아이디 길이 :" + array[0].length  + "<br>");
+document.write("<hr>");
+
+
+	// 5. 아이디의 마지막 값만 출력한다.
+let x = array[0].charAt(array[0].length-1);	     // c
+let y = array[0].substring(array[0].length-1,array[0].length);   // c
+	document.write("x : " + x + "<br>");
+	document.write("y : " + x + "<br>");
+document.write("<hr>");
+
+
+	// 6. 시설이라는 단어 몇개인지 출력
+var str1 = "외국인시설과 내국인 시설 모두 좋은 시설이다.";
+var str2 = str1.split("시설");
+//str2[0] = "외국인";
+//str2[1] = "과 내국인";
+//str2[2] = "모두 좋은 ";
+//str2[3] = "이다.";
+	document.write("시설 이라는 글자는 : " + (str2.length-1) + "개 있습니다.");
+
+
+ </script>
+ <body>
+  
+ </body>
+</html>

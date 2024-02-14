@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+<script>
+var name = prompt("사원명은?");
+var year = prompt("근무년수는?");
+
+if(year >= 15) {
+	document.write(name + "사원의 연차는" + "\n " + year +"년으로"+"특급"+"입니다");
+} else if (year >= 10) {
+	document.write(name + "사원의 연차는" + "\n "+ year +"년으로"+"고급"+"입니다");
+} else if (year >= 6) {
+	document.write(name + "사원의 연차는" + "\n "+ year +"년으로"+"중급"+"입니다");
+} else {
+	document.write(name + "사원의 연차는" + "\n "+ year +"년으로"+"초급"+"입니다");
+}
+
+</script>
+ <body>
+  
+ </body>
+</html>

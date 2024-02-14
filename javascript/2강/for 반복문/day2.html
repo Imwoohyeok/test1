@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>달력2</title>
+ </head>
+ 
+ <script>
+ // &nbsp;
+	for(var d = 1; d<=31; d++) {
+		document.write(d + "일 ");
+		if (d < 10) {
+				document.write("&nbsp;");
+		}
+			if (d % 7 == 0) {
+				document.write("<br>");
+			} 
+	}
+ </script>
+ <body>
+  
+ </body>
+</html>

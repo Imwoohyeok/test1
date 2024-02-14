@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>풀어보기</title>
+ </head>
+
+<script>
+//for문 - 풀어보기1		 1일 ~ 31일
+for(var i = 1; i<=31; i++) {
+	document.write(i + "일" + " ");
+}
+document.write("<hr>");
+
+//for문 - 풀어보기2		 1~100까지 홀수 출력
+// (방법1)
+for(var i = 1; i<=100; i=i+2) {
+	document.write(i + " ");
+}
+document.write("<hr>");
+//(방법2)		-> + , - , * , / , %
+for(var i = 1; i<=100; i++) {
+	if(i % 2 == 1) {	// 홀수조건 추가
+		document.write(i + " ");
+	}
+}
+document.write("<hr>");
+
+//3번		1~100까지 3의 배수 출력
+for(var i = 1; i<=100; i++) {
+	if(i % 3 == 0) {
+	document.write(i + " ");
+	}
+}
+document.write("<hr>");
+
+//4번		달력 출력
+for(var d = 1; d<=31; d++) {
+	document.write(m + d + "일" + " ");
+
+	if (d % 7 == 0) {
+		document.write("<br>");
+	}
+}
+document.write("<hr>");
+
+//예제 5번		구구단 2단
+var i = 2;
+for(var j = 1; j<10; j++) {
+	result = i + "x" + j + "=" + i*j  + "<br>";
+	document.write(result);
+}
+document.write("<hr>");
+
+/*		구구단 prompt
+var dan = prompt("출력 구구단 입력","1");
+for(var j = 1; j<10; j++) {
+	result = dan*j;
+	document.write(dan + "x" + j + " = " + result  + "<br>");
+}	*/
+
+
+</script>
+
+ <body>
+  
+ </body>
+</html>

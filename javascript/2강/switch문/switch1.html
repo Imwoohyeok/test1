@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>제어구조-switch문</title>
+ </head>
+
+ <script>
+// default 는 else 와 같은 의미
+// switch문을 if문으로 다 바꿀 수 있다.	if문을 switch 로 다 못 바꾼다.
+// switch문은 참 거짓 만 구분한다.
+var number = 3;
+switch(number) {
+ case 1 : document.write("1 입니다.");
+ break;		//switch문을 닫는다.
+ case 2 : document.write("2 입니다.");
+ break;
+ case 3 : document.write("3 입니다.");
+ break;
+ default : document.write("몰라요");
+}
+document.write("<br>");
+if(number == 1) {
+	document.write("1 입니다.");
+} else if (number == 2) {
+	document.write("2 입니다.");
+} else if (number == 3) {
+	document.write("3 입니다.");
+} else {
+	document.write("몰라요");
+}
+ </script>
+
+ <body>
+  
+ </body>
+</html>

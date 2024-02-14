@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>4번 예제</title>
+ </head>
+
+ <script>
+ //switch 문
+var gender = "F";
+ switch(gender){
+	case "M" : document.write("남성입니다.");
+	break;
+	case "F" : document.write("여성입니다.");
+	break;
+	default : document.write("잘못된 값입니다.");
+	break;
+ }
+document.write("<hr>");
+
+//if문
+var gender = prompt("성별을 입력해주세요(남성:M 여성:F)","");
+if (gender.toUpperCase() == "M") {
+	document.write("남성입니다.");
+} else if (gender.toUpperCase() == "F") {
+	document.write("여성입니다.");
+} else {
+	document.write("잘못된 값입니다.");
+}
+ </script>
+
+ <body>
+  
+ </body>
+</html>

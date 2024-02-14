@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입화면(html5기능포함)</title>
+ </head>
+ <!-- memberWrite.html -->
+ <script>
+
+function fn_action() {
+				// 현재창.폼이름.상자이름.값
+	if(document.frm.userid.value == "") {    //공백여부 체크
+		alert("아이디를 입력해주세요.");
+		document.frm.userid.focus();	// 커서의 위치
+		return false;	// 스크립트 함수의 종료
+	}
+	if(document.frm.userid.value.length < 6 || 
+	   document.frm.userid.value.length > 20) {
+		alert("아이디는 6자~20자 사이로 작성해주세요");
+		document.frm.userid.focus();
+		return false;
+	}
+
+	if(document.frm.pass.value == "") {
+		alert("암호를 입력해주세요.");
+		document.frm.pass.focus();	
+		return false;	
+	}
+
+	if(document.frm.name.value == "") {
+		alert("이름을 입력해주세요.");
+		document.frm.name.focus();	
+		return false;	
+	}
+
+	if(document.frm.jumin1.value.length != 6) {
+		alert("주민번호 앞자리를 다시 확인해주세요.");
+		document.frm.jumin1.focus();
+		return false;
+	} else if(document.frm.jumin2.value.length != 7) {
+		alert("주민번호 뒷자리를 다시 확인해주세요.");
+		document.frm.jumin2.focus();
+		return false;
+	} 
+
+	let jumin2 = document.frm.jumin2.value;
+	let n = jumin2.charAt(0);
+	// n = jumin2.substring(0,1);
+	//if( n != "1" && n != "2" && n != "3" && n != "4"){  }
+	if(Number(n) < 1 || Number(n) > 4) {
+		alert("주민번호 뒷자리를 다시 확인해주세요.");
+		document.frm.jumin2.focus();
+		return false;
+	}
+	
+	if(document.frm.gender[0].checked == false &&
+		document.frm.gender[1].checked == false) {	
+		alert("성별을 체크해주세요");
+		return false;
+	}
+	
+	document.frm.submit(); 
+}
+
+function fn_change() {
+	let email3 = document.frm.email3.value;
+	document.frm.email2.value = email3;
+	if( email3 == "" ){
+		document.frm.email2.disabled = false;
+	} else {
+		document.frm.email2.disabled = true;
+	}
+}
+function fn_popup() {
+	let url = "post1.html";
+	let nick = "post";
+	let opt = "width=400,height=300";
+	window.open(url.nick.opt);
+}
+function fn_pass1() {
+	let pass1 = document.getElementById("pass1").value;
+	if(pass1.length < 8 || pass1.length > 20){
+		document.getElementById("message1").innerHTML
+				="<font color='red'>비밀번호는 8~20 이어야 합니다. </font>";
+	} else {
+		document.getElementById("message1").innerHTML
+				="<font color='blue'>사용할 수 있는 암호입니다. </font>";
+	}
+}
+
+function fn_pass2() {
+	let pass1 = document.getElementById("pass1").value;
+	let pass2 = document.getElementById("pass2").value;
+	if( pass1 != pass2 ) {
+		document.getElementById("message2").innerHTML
+				="<font color='red'>일치하지 않습니다. </font>";
+	} else {
+		document.getElementById("message2").innerHTML
+				="<font color='blue'>일치합니다. </font>";
+	}
+}
+
+
+ </script>
+ <body>
+
+<!-- 탑 메뉴 S -->
+<font color="#555555">
+<table border="0" cellpadding="10">
+	<tr bgcolor="skyblue">
+		<th width="700px">회원등록</th>
+	</tr>
+</table>
+</font>
+<!-- 탑 메뉴 E -->
+
+<br><br>
+
+<form name="frm" method="post" 
+				 action="memberWriteSave.jsp"
+				 autocomplete="on">	   <!-- 이전화면 암호저장-->
+
+ <table border="0" 
+		width="800" 
+		cellpadding="5"
+		cellspacing="1"
+		bgcolor="#cccccc">
+	
+	<tr bgcolor="#ffffff">
+		<th>아이디</th>
+		<td>
+		<input type="text" 
+			   name="userid" 
+			   maxlength="20" 
+			   autofocus 
+			   placeholder="아이디를 입력해주세요.">
+		
+		<input type="button" value="중복체크">
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>암호</th>
+		<td> 
+		<input type="password" name="pass1" id="pass1" onkeyup="fn_pass1()">
+		<span id = "message1"></span>
+		<br>
+		<input type="password" name="pass2" id="pass2" onkeyup="fn_pass2()"> 
+		<span id = "message2"></span>
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>이름</th>
+		<td> <input type="text" name="name"> </td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>주민번호</th>
+		<td> 
+		<input type="text" name="jumin1" maxlength=6> -
+		<input type="text" name="jumin2" maxlength=7>
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>성별</th>
+		<td> 
+		<input type="radio" name="gender" value="M"> 남 
+		<input type="radio" name="gender" value="F"> 여 
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>이메일</th>
+		<td>
+		<input type="email" name="email1">
+		@
+		<input type="email" name="email2" id="email2">
+		<select name="email3" onchange="fn_change()">
+			<option value="">직접입력</option>
+			<option value="naver.com">naver.com</option>
+			<option value="google.com">google.com</option>
+			<option value="nate.com">nate.com</option>
+			<option value="daum.net">daum.net</option>
+		</select>
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>주소</th>
+		<td style="line-height:30px;">
+			<input type="text" name="zipcode">
+			<button type="button" onclick="fn_popup()">우편번호찾기</button> <br>
+			<input type="text" name="addr1"><br>
+			<input type="text" name="addr2">
+		</td>
+	</tr>
+
+	<tr bgcolor="#ffffff">
+		<th>등록일</th>
+		<td>
+			<input type="date" name="rdate" value="2023-11-29">
+		</td>
+	</tr>
+</table>
+
+<br><br>
+
+<div style="text-align:center; width:800px;">
+	<button type="submit" onclick="fn_action(); return false;">저장</button>  
+	<!-- 전송을 막는 기능-->
+	<input type="reset" value="취소">
+</div>
+
+</form>
+
+ </body>
+</html>

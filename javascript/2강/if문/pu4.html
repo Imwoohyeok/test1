@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>and or 연산자</title>
+ </head>
+
+ <script>
+ // && and연산자
+ // || or 연산자
+ eng = 60;
+ kor = 60;
+ // 합격, 재시험, 불합격
+ // 합격(둘다 만족), 재시험 (둘중 한개만 만족), (불합격 둘다 60점 미만)
+	if( eng >= 60 && kor >= 60 ) {
+		document.write("합격");
+	} else if ( eng >= 60 || kor >= 60 ) {
+		document.write("재시험");
+	} else {
+		document.write("불합격");
+	}
+document.write("<br>");
+
+// 재시험을 우선 세팅하는 경우 (재시험, 합격, 불합격)
+	if( eng >= 60 && kor >= 60 ) {
+		document.write("재시험");
+	} else if ( eng >= 60 && kor >= 60 ) {
+		document.write("합격");
+	} else {
+		document.write("불합격");
+	}
+
+document.write("<br>");
+
+if( (eng >= 60 && kor >= 60 ) || ( eng < 60 && kor >= 60) ) {
+		document.write("재시험");
+	} else if ( eng >= 60 && kor >= 60 ) {
+		document.write("합격");
+	} else {
+		document.write("불합격");
+	}
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

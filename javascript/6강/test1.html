@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>popup창</title>
+ </head>
+
+ <script>
+function fn_action1() {
+
+	let url ="http://daum.net";
+	//window.screen.width :: 모니터 화면 넓이
+	//window.screen.height :: 모니터 화면 높이
+	let screen_width = window.screen.width/2 -250;
+	let screen_height = window.screen.height/2 -200;
+
+	window.open(url,"popup",
+		"width=500,height=400,left="+screen_width+",top="+ screen_height);
+	//alert(screen_width _ ", " + screen_height);
+}
+
+function fn_action2() {
+	//window.open("주소","별칭","옵션들");
+	//별칭을 같게하면 브라우저창이 하나로 되고 , 별칭을 달리하면 2개의 창이 열린다
+	window.open("http://naver.com","popup","width=500,height=400");
+}
+ </script>
+
+ <body>
+
+<button type="button" onclick="fn_action1()">daum열기</button> 
+<button type="button" onclick="fn_action2()">naver열기</button> 
+
+ </body>
+</html>

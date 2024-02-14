@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>onclick</title>
+ </head>
+
+ <script>
+function fn_test1() {
+	// 변수타입 : var(재선언 가능), let(재선언 불가능), const(상수)
+	let a = prompt('값입력1','');
+	let b = prompt('값입력2','');
+	alert(Number(a) + Number(b));
+}
+
+ </script>
+ <body>
+ <h2>인사버튼</h2>
+<!-- 이벤트핸들러 : onclick(), 등등~ -->
+<input type="button" value="아침인사(영어)" onclick="alert('Good morning~')">
+<input type="button" value="아침인사(일본)" onclick="alert('오하요~')">
+<input type="button" value="아침인사(중국)" onclick="alert('니하오~')">
+
+<h2>계산버튼</h2>
+<input type="button" value="1+1은?" onclick="alert('1+1')">
+<input type="button" value="값입력" 
+	   onclick=fn_test1()>
+ </body>
+</html>

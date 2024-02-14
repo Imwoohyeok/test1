@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+function Clock() {
+	var date = new Date();
+	var yy = date.getFullYear();
+	var mm = date.getMonth()+1;
+	var dd = date.getDate();
+	var hs = date.getHours();
+	var ms = date.getMinutes();
+	var ss = fn_zero(date.getSeconds());
+	
+	fn_write(yy,mm,dd,hs,ms,ss);
+}
+function fn_write(yy,mm,dd,hs,ms,ss) {
+	var date1 = yy+"-"+mm+"-"+dd;
+	var time1 = hs+":"+ms+":"+ss;
+	document.getElementById("clock1").innerHTML = date1;
+	document.getElementById("clock2").innerHTML = time1;
+}
+
+function fn_zero(number) { //매개변수
+	
+	//let number = 7; // --> 07
+	let result = (number<10)?"0"+number:number;  //삼항연산
+	return result;
+	
+	/*
+	if( number < 10 ) {
+		result = "0" + number;
+	} else {
+		result = number;
+	}*/
+}
+
+setInterval(Clock,1000); // 다른 함수를 실행하는 함수 (함수명,지연시간)
+
+ </script>
+ <body>
+
+ <!-- 날짜 -->
+  <div id="clock1"></div>
+
+ <!-- 시간 -->
+  <div id="clock2"></div>
+
+ </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+.table1 {
+	width:800px;
+	height:200px;
+	border:1px; solid #555555;
+	border-collapse:collapse;
+	padding:1px;
+	margin-left:200px;
+}
+.table2 {
+	width:800px;
+	height:200px;
+	background-color:#cae7ec;
+	border-collapse:collapse;
+	line-height:50px;
+	
+}
+.button1{
+	background-color:#66cc33;
+	border:1px solid #66ff33;
+	width:80px;
+	height:60px;
+	color:#ffffff;
+	
+}
+.button2 {
+	background-color:#66cc33;
+	color:#ffffff;
+	width:200px;
+	height:30px;
+	border:1px solid #66ff33;
+	margin-left:500px;
+}
+.button3 {
+	width:70px;
+	height:30px;
+	border:1px solid #66ff33;
+	color:#66ff33;
+}
+.div_button {
+	margin-left:350px;
+}
+
+ </style>
+
+ <script>
+function fn_go2() {
+	window.location.href="passLost.html"
+}
+function fn_go3() {
+	window.location.href="memberAgree.html"
+}
+ </script>
+ <body>
+  <p><b>로그인</b></p>
+  <form name="frm" method="post" action="">
+  <table border="0" class="table1">
+  	<colgroup>
+		<col width="20%">
+		<col width="20%">
+		<col width="*">
+	</colgroup>
+	<tr>
+		<td>
+		회원아이디
+		</td>
+
+		<td>
+		<input type="text" name="userid" autofocus>
+		</td>
+
+		<td rowspan="2">
+		<button type="button" class="button1" onclick="fn_go2()">로그인</button><br>		
+		</td>
+	</tr>
+
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="text"></td>
+	</tr>
+
+	<tr>	
+		<td>
+		<input type="checkbox">자동로그인
+		</td>
+	</tr>
+</table>
+ <table border="1" class="table2">
+ 	<tr>
+		<td>
+		<b>회원로그인안내</b><br>
+		회원아이디 및 비밀번호가 기억 안나실 때는 아이디/비밀번호 찾기를 이용하십시오.<br>
+		아직 회원이 아니시라면 회원으로 가입 후 이용해 주십시오.<br>
+		<button type="button" class="button2">아이디/비밀번호 찾기</button>
+		<button type="button" onclick="fn_go3()" class="button3">회원가입</button>
+		</td>
+	
+	</tr>
+ </table>
+<div class="div_button">
+  <p>메인으로 돌아가기</p>
+</div>
+  </form>
+ </body>
+</html>

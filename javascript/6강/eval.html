@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>자동연산함수</title>
+ </head>
+
+ <script>
+
+function fn_eval() {
+	//eval() : 자동연산함수
+	let str1 = document.frm.box1.value;
+	alert( eval(str1) );
+}
+
+ </script>
+
+ <body>
+<form name="frm">
+
+<input type="text" name="box1">
+<button type="button" onclick="fn_eval()">연산</button>
+
+
+</form>
+ </body>
+</html>
