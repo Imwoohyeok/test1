@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div,span{
+        border:1px solid red;
+    }
+    .test1{
+        width:200px;
+        display:block;
+        margin: 0 auto;
+    }
+    span{
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        padding: 20px;
+        /*display: inline-block;*/
+    }
+    .parent{
+        margin-top: 50px;
+        /*width: 150px;*/
+        text-align: center;
+    }
+    .parent > div {
+        border:1px dotted rgb(0,0,255);
+        width:500px;
+        height: 150px;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 150px;
+    }  
+</style>
+<body>
+    <div class="test1">
+        1번
+    </div>
+
+    <div class="test1">
+        2번째
+    </div>
+
+    <div>
+        <span>첫번째</span>
+        <span>두번째</span>
+    </div>
+
+    <div class="parent">
+        <div>
+            목록1
+        </div>
+        <div>
+            목록2<br>목록2 설명
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        h2 {
+            margin-top: 800px;
+        }
+        div {
+            border:1px solid red;
+            padding:20px;
+        }
+        div div{
+            background-color: #00ff0080;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>CSS</div>
+    </div>
+
+    <h1>h1</h1>
+    <!--a 태그는 주소를 바꾼다.-->
+    <a href="#first">h2-1로 가기</a><br>
+    <a href="#second">h2-2로 가기</a><br>
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td colspan="2">2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <table style="border:1px solid red; width:500px;">
+        <caption>caption</caption> <!-- 표의 내용() -->
+        <summary>summary</summary> <!-- 표의 내용(이름,주소) -->
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>민수</td>
+                <td>천안</td>
+            </tr>
+            <tr>
+                <td>휴먼</td>
+                <td>수원</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="https://search.naver.com/search.naver">
+        <input type="text" name="query">
+        <input type="submit" value="검색">
+    </form>
+    <h2 id="first">h2-1</h2>
+    <h2 id="second">h2-2</h2>
+
+    <a href="tel:010-1234-5678">커리</a>
+
+</body>
+
+</html>

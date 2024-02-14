@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      @font-face {
+          font-family: 'Cafe24Ssurround';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+          unicode-range: U+0041-005A, U+0061-007A, U+0030-0039, U+AC00-D7A3;
+      }
+  
+        [type=checkbox]:checked + span {     /* 체크박스 체크한 span만*/
+            text-decoration: line-through;   /*라인 밑줄*/
+        }
+
+        .test1 {
+            border:1px solid red;
+            width:200px;  
+        }
+
+        .nowrap {
+            white-space: nowrap; /* 한줄 쓰기 div밖으로 튀어나간다.*/
+
+            overflow: hidden; /*div밖으로 튀어나온게 짤림*/
+            text-overflow: ellipsis; 
+            /* 글이 길면 ...이라고 나온다 
+               단,overflow: hidden이 있어야한다*/
+        }
+
+        .word {
+            word-wrap: break-word;  /* */
+        }
+
+        .word-b {
+            word-break: break-all;  /* 주로 많이 사용 다 붙어서 텍스트*/
+        }
+
+        .wf {
+            font-family: 'Cafe24Ssurround';
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <input type="checkbox">
+                <span>할일 1</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span>할일 2</span>
+            </li>
+            <li>
+                <input type="checkbox">
+                <span>할일 3</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="test1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum est repellat distinctio molestias. Et facere a tempora perspiciatis iste ipsam, expedita distinctio dolorem molestiae magni neque id perferendis recusandae accusantium.
+    </div>
+
+    <!-- title : 마우스를 올리면 title 내용이 뜬다 -->
+
+    <div class="test1 nowrap" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum est repellat distinctio molestias. Et facere a tempora perspiciatis iste ipsam, expedita distinctio dolorem molestiae magni neque id perferendis recusandae accusantium.">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum est repellat distinctio molestias. Et facere a tempora perspiciatis iste ipsam, expedita distinctio dolorem molestiae magni neque id perferendis recusandae accusantium.
+    </div>
+
+    <div class="test1 word">
+        Loremasdasdsadasdasdadasdasd 1231231231512512 ipsum dolor sit amet,consectetur adipisicing elit. Harum est repellat distinctio molestias. Et facere a tempora perspiciatis iste ipsam, expedita distinctio dolorem molestiae magni neque id perferendis recusandae accusantium.    
+    </div>
+
+    <div class="test1 word-b">
+        Loremasdasdsadasdasdadasdasd 1231231231512512 ipsum dolor sit amet,consectetur adipisicing elit. Harum est repellat distinctio molestias. Et facere a tempora perspiciatis iste ipsam, expedita distinctio dolorem molestiae magni neque id perferendis recusandae accusantium.    
+    </div>
+
+    <div class="test1 wf">
+        글씨 적기 asdaavfdhher
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;   /*위 아래 마진*/
+            padding: 0;
+            /* background-image: url("https://poiemaweb.com/img/bg/stock-photo-125979219.jpg"); */
+            background-attachment: fixed;
+        }
+        #image {
+            border:1px solid red;
+            height: 200px;
+            background-image: url("http://poiemaweb.com/img/bg/dot.png");
+            background-repeat: no-repeat;  /*반복설정 x축 y축 전체*/ 
+        }
+        #size {
+            border:1px solid blue;
+            width: 50px;
+            height: 200px;
+            background-image: url("https://poiemaweb.com/img/bg/stock-photo-125979219.jpg");
+            /* background-size:100px 150px; */
+            background-size:100% 100%;
+            background-size:contain; 
+            /* cover :  width, height 중 큰값에 배경이미지를 맞춘다*/
+            /* contain : 배경이미지가 보이지 않는 부분없이 전체가 들어갈 수 있다 */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #color {
+            height:100px;
+            background-color:aqua;
+        }
+        /* background: color || image || repeat || attachment || position */
+        /*  background-attachment: fixed; 스크롤되지 않고 고정됨 */
+      </style>
+</head>
+
+<body>
+    <div id="image"></div>
+
+    <div id="size"></div>
+
+    <div id="color"></div>
+    
+</body>
+</html>

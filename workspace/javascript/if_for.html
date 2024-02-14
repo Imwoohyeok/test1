@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 10;
+        if (a > 10) {
+            console.log("10보다 큽니다")
+        }
+        if (a <= 10) {
+            console.log("10보다 작거나 같다")
+        }
+        if (!(a > 10)) {
+        }
+
+        if (a > 10 && a < 20) {
+
+        }
+        // 정반대
+        if (!(a > 10 && a < 20)) {
+
+        }
+
+        // &&가 || 보다 우선 순위가 높다
+        if (a > 10 || a < 20 && a == 15) {
+        }
+
+        // &&만 있는 경우
+        // 처음부터 false를 만나는 순간까지만 연산
+        if (a > 1 && a > 10 && a > 100 && a > 1000) {
+
+        }
+        // ||만 있는 경우
+        // 처음부터 true를 만나는 순간까지만 연산
+
+
+        let score = 95;
+        if (score > 90) {
+            console.log("A");
+            // } else if(score > 80) {
+        } else if (!(score > 90) && score > 80) {
+            console.log("B")
+        } else {
+            console.log("F")
+        }
+
+        if (score > 90) {
+            console.log("A");
+        }
+        if (score > 80) {
+            console.log("B")
+        }
+
+        if (score == 0 || score) {
+
+        }
+
+
+        let grade = score > 90 ? 'A' : score > 80 ? 'B' : 'F'
+
+
+        // switch는 if 중에서 ==으로 구성된 경우 사용 가능
+        let i = 6;
+        switch (i) {
+            case 3:
+            case 4:
+            case 5:
+                console.log('봄')
+                break;
+            case 6:
+            case 7:
+            case 8:
+                console.log('여름')
+                break;
+            case 9:
+            case 10:
+            case 11:
+                console.log('가을')
+                break;
+            default:
+                console.log("겨울");
+                break;
+        }
+
+        // 1단계
+        console.log("2 x 1 = 2");
+        console.log("2 x 2 = 4");
+        console.log("2 x 3 = 6");
+        console.log("2 x 4 = 8");
+        console.log("2 x 5 = 10");
+        // 2단계
+        // 다음 출력물을 ctrl+c해서 ctrl+v한 뒤에
+        // 내가 뭘 어떻게 바꾸는지 보고
+        // 바꾼 애들을 변수로 표시
+        let j = 1;
+        console.log("2 x 1 = 2");
+        console.log("2 x " + j + " = " + (j * 2));
+        j = 2;
+        console.log("2 x 2 = 4");
+        console.log("2 x " + j + " = " + (j * 2));
+
+        console.log('------------------')
+        for (let j = 1; j <= 9; j++) {
+            console.log("2 x " + j + " = " + (j * 2));
+        }
+
+        let k = 2;
+        for (let j = 1; j <= 9; j++) {
+            console.log(k + " x " + j + " = " + (j * k));
+        }
+        k = 3;
+        for (let j = 1; j <= 9; j++) {
+            console.log(k + " x " + j + " = " + (j * k));
+        }
+
+        console.log('====================')
+        for (let k = 2; k <= 9; k++) {
+            for (let j = 1; j <= 9; j++) {
+                // console.log(k + " x " + j + " = " + (j * k));
+                document.write(k + " x " + j + " = " + (j * k) + " ");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>1단계</h1>");
+
+        for (let i = 0; i < 5; i++) {
+            document.write("+");
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>2단계</h1>");
+
+        for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 5; i++) {
+                document.write("+");
+            }
+            document.write("<br>");
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>3단계</h1>");
+
+        // for (let i = 0; i < 1; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 2; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 3; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 4; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 5; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        for (let j = 1; j <= 5; j++) {
+            for (let i = 0; i < j; i++) {
+                document.write("+");
+            }
+            document.write("<br>");
+        }
+
+
+
+
+        /*
+        for 하나 이상
+        문자 딱 하나만 변수에 담아서 사용 (let str = "+")
+        document.write를 이용해서 출력
+        (옆으로 이어서 써줌, 다음줄은 "<br>")
+        
+        1단계
+        +++++
+        
+        2단계
+        +++++
+        +++++
+        +++++
+        
+        3단계
+        +
+        ++
+        +++
+        ++++
+        +++++
+        
+        4단계
+        +....
+        ++...
+        +++..
+        ++++.
+        +++++
+        
+        5단계
+        ....+
+        ...++
+        ..+++
+        .++++
+        +++++
+        
+        6단계
+        ....+
+        ...+++
+        ..+++++
+        .+++++++
+        +++++++++
+        
+        7단계
+        ....+....
+        ...+++...
+        ..+++++..
+        .+++++++.
+        +++++++++
+        
+        */
+
+
+        for (let i = 0; i < 10; i++) {
+            console.log("숫자 출력", i);
+
+            if (i % 2 == 0) {
+                continue;
+            }
+            console.log("이거 홀수임!!");
+        }
+
+        for (let i = 0; i < 10; i++) {
+            if (i > 5) {
+                break;  // i가 5보다 클 때 종료 //  가장 가까운 게 적용됨
+            }
+            console.log("! 숫자 출력", i);
+        }
+
+        // if (age == -1) age = 8;
+        //중괄호를 빼도 된다. 
+
+        for (let i = 0; i < 10; i++) {
+
+            let isBreak = false;
+
+            for (let j = 0; j < 10; j++) {
+                if (j > 5) {
+                    isBreak = true;
+                    break;
+                }
+            }
+
+            if (isBreak == true) {
+                break;
+            }
+        }
+
+
+        //m의 값을 의 n값으로 바꾸고
+        //n의 값을 의 m값으로 바꾸기
+        let m = "수박";
+        let n = "바나나";
+        let c = [m,n];
+        m= c[n];
+        n= c[m];
+
+        
+        
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

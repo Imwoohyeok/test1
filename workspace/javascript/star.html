@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("<h1>1단계</h1>");
+
+        for (let i = 0; i < 5; i++) {
+            document.write("+");
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>2단계</h1>");
+
+        for (let j = 0; j < 3; j++) {
+            for (let i = 0; i < 5; i++) {
+                document.write("+");
+            }
+            document.write("<br>");
+        }
+
+
+        document.write("<hr>");
+        document.write("<h1>3단계</h1>");
+
+        // for (let i = 0; i < 1; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 2; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 3; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 4; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        // for (let i = 0; i < 5; i++) {
+        //     document.write("+");
+        // }
+        // document.write("<br>");
+
+        for (let j = 1; j <= 5; j++) {
+            for (let i = 0; i < j; i++) {
+                document.write("+");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>4단계</h1>");
+
+        for (let j = 1; j <= 5; j++) {
+            for (let i = 0; i < j; i++) {
+                document.write("+");
+            }
+            for (let k = 4; k >= 1; k--) {
+                document.write(".");
+            }
+            document.write("<br>");
+        }
+
+        document.write("<hr>");
+        document.write("<h1>5단계</h1>");
+
+
+        /*
+        for 하나 이상
+        문자 딱 하나만 변수에 담아서 사용 (let str = "+")
+        document.write를 이용해서 출력
+        (옆으로 이어서 써줌, 다음줄은 "<br>")
+        
+        1단계
+        +++++
+        
+        2단계
+        +++++
+        +++++
+        +++++
+        
+        3단계
+        +
+        ++
+        +++
+        ++++
+        +++++
+        
+        4단계
+        +....
+        ++...
+        +++..
+        ++++.
+        +++++
+        
+        5단계
+        ....+
+        ...++
+        ..+++
+        .++++
+        +++++
+        
+        6단계
+        ....+
+        ...+++
+        ..+++++
+        .+++++++
+        +++++++++
+        
+        7단계
+        ....+....
+        ...+++...
+        ..+++++..
+        .+++++++.
+        +++++++++
+        
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border:1px solid red;
+        }
+
+        .parent {
+            width:100px;
+            margin: 50px;
+            padding:20px;
+            background: green;
+            color:white;
+
+        }
+        .child {
+            background-color: blue;
+        }
+        .relative {
+            position:relative;
+            top:50px;
+            left:-50px;
+            color:black;
+        }
+        .absolute {
+            
+            position:absolute;
+            top:50px;
+            left: 50px;
+            
+            /*
+            right: 0;
+            bottom: 0;
+            */
+        }
+        .fixed {
+            position: fixed;
+            right:100px;
+            bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 111111111 -->
+    <div class="parent" id="top">
+        부모
+        <div class="child">
+            자식<br>
+            다음줄
+        </div>
+        <div>
+            자식2
+        </div>
+    </div>
+
+    <!-- 22222222 -->
+    <!-- relative : 상대적위치 
+                    그위치에서 top,left 이동한다-->
+    <div class="parent">
+        부모
+        <div class="child relative">
+            자식<br>
+            다음줄
+        </div>
+        <div>
+            relative
+        </div>
+    </div>
+
+    <!-- 333333333 -->
+    <!-- absolute : 절대적위치 
+                    body 기준으로 top,left 위에 글씨랑 붙는다
+                    겹쳐있을 수 있다-->
+    <div class="parent">
+        부모
+        <div class="child absolute">
+            자식<br>
+            다음줄
+        </div>
+        <div>
+            absolute
+        </div>
+    </div>
+
+    <!-- 44444444444444 -->
+    <div class="parent" style="position: relative;">
+        부모
+        <div class="child absolute">
+            자식-----<br>
+            다음줄
+        </div>
+        <div>
+            absolute
+        </div>
+    </div>
+    
+    <!-- 5555555555555 -->
+    <div class="fixed">
+        <a href="#top">맨 위로</a>
+    </div>
+</body>
+</html>

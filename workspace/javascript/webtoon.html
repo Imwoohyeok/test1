@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .day {
+            border:1px solid red;
+            width:1000px;
+            margin:0 auto;
+        }
+        ul {
+            padding:0;
+            /* 부모안에 자식 안에 자식 부모한테 주면 
+            자식도 똑같은 형태 */ 
+            display: flex;         
+        }
+        ul li {
+            list-style: none;
+            flex-shrink: 1;
+            flex-grow: 1;
+
+            margin: 0 10px;
+        }
+        ul li img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>휴먼 웹툰</h1>
+    <div class="day">
+        <h2>목요 웹툰</h2>
+        <ul id="list">
+            
+        </ul>
+    </div>
+    <script>
+        // 배열 : 이미지와 제목
+        
+        let listToon = [];
+        let toon = ["https://image-comic.pstatic.net/webtoon/478261/thumbnail/thumbnail_IMAG21_7fbd8610-0a97-40e3-9c63-101ea07fc4b4.jpg","선천적얼가인들"];
+        listToon.push(toon);
+        toon = ["https://image-comic.pstatic.net/webtoon/570506/thumbnail/thumbnail_IMAG21_3630857206429464627.jpg","최강전설 강해효"];
+        listToon.push(toon);
+        listToon.push(toon);
+        listToon.push(toon);
+        listToon.push(toon);
+
+        // ul을 선택하고
+        let list = document.querySelector("#list");
+        // console.log(list.parentNode);   부모를찾는 노드
+
+        // li를 만들고 - 배열을 이용해서
+        let html = "";
+        // html += '<li>';
+        // html += '    <img src="'+ listToon[0][0] +'">';
+        // html += '    <br>';
+        // html += '    <strong>'+ listToon[0][1] +'</strong>';
+        // html += '</li>';
+
+        // html += '<li>';
+        // html += '    <img src="'+ listToon[1][0] +'">';
+        // html += '    <br>';
+        // html += '    <strong>'+ listToon[1][1] +'</strong>';
+        // html += '</li>';
+
+        for(let i=0; i<listToon.length; i++) {
+            html += '<li>';
+            html += '<img src="'+ listToon[i][0] +'">';
+            html += '<br>';
+            html += ' <strong>' + listToon[i][1] + '</strong>';
+            html += '</li>';
+        }
+
+        // 추가
+        list.innerHTML = html;
+
+        for(let i=0; i<listToon.length; i++) {
+            html += '<li>';
+            html += '<img src="'+ listToon[i][0] +'">';
+            html += '<br>';
+            html += ' <strong>' + listToon[i][1] + '</strong>';
+            html += '</li>';
+        }
+
+        // 추가
+        list.innerHTML = html;
+
+    </script>
+</body>
+</html>
