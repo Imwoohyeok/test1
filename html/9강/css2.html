@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>body td설정</title>
+ </head>
+
+ <style>
+ body {
+	font-size:20px;
+	color:#555555;
+	font-family:돋움,굴림,arial;
+	font-weight:bold;
+	line-height:1.5;
+ }
+ td {
+	color:pink;
+	line-height:1.2;
+ }
+ </style>
+
+ <body>
+
+ 학습과목 111
+
+ <table border="1">
+	<tr>
+ 		<td>
+		학습과목222<br>
+		-Javascript<br>
+		-Html<br>
+		</td>
+	</tr>
+
+</table>
+<!--                          문자열 스타일                     -->
+
+<h2> 텍스트에 선 그려주기<h2>
+
+<p style="text-decoration:none">선을 그려주지 않는다</p>
+<p style="text-decoration:underline">텍스트 밑에 선을 그려준다</p>
+<p style="text-decoration:line-through">텍스트 가운데 취소선을 그려준다</p>
+<p style="text-decoration:overline">텍스트에 위에 선을 그려준다</p>
+<p style="text-decoration:underline overline">텍스트에 밑과 위 모두 선을 그려준다</p>
+
+<p>
+   <span style="text-transform:uppercase;">html</span><br>
+   <span style="text-transform:lowercase;">java</span><br>
+   <span style="text-transform:capitalize;
+				letter-spacing:10px">oracle spring</span><br>
+</p>
+
+<!--  5. vertical-align : top,middle,bottom -->
+<table border="1" width="200" height="100">
+	<tr>
+		<td style="vertical-align: bottom;">oracle</td>
+	</tr>
+</table>
+<br>
+
+<!-- div 에 vertical-align 적용이 안됨.... -->
+<div style="width:200px; 
+			height:100px; 
+			background:yellow;
+			vertical-align:middle;">
+	javascript
+</div>
+<br>
+
+<!-- 6. white- space -->
+<table border="1" width="400" height="100">
+	<tr>
+		<td style="white-space:nowrap;">
+			oracle oracle oracle oracle oracle
+			oracle oracle oracle oracle oracle
+		</td>
+	</tr>
+</table> 
+
+
+
+ </body>
+</html>

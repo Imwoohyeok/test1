@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>대구대학교 게시판</title>
+ </head>
+ <style>
+
+ body {
+	font-size:12px;
+	font-family:맑은고딕,굴림체;
+	color:#555555;
+	/*font-weight:bold; */
+ }
+ .div_title {
+ 	width:900px;
+	height:40px;
+	color:#389273;
+	font-size:30px;
+	font-weight:bold;
+	padding-bottom:20px;
+	border-bottom:1px solid #dfdfdf;
+ }
+ .div_search {
+	width:900px;
+	height:40px;
+	padding-top:30px;
+	border:0px;
+	text-align:right;
+	margin-bottom:10px;
+ }
+ table {
+	width:900px;
+	border-top:2px solid #8acf69;
+	border-collapse:collapse;			/*cell 사이의 공간 제거*/
+	
+ }
+ th,td {
+	border-bottom:1px solid #c0c0c0;
+	padding:10px;					/*padding: 내부 간격 margin: 외부 간격*/
+	font-size:14px;
+ }
+ th {
+	background-color:#f6f6f6;
+ }
+ .select1 {
+	border:1px solid #dbdbdb;
+	padding:10px;
+ }
+ .input1 {
+	border:1px solid #dbdbdb;
+	padding:10px;
+ }
+ .button1 {
+	border:1px solid #dbdbdb;
+	padding:10px;
+	background-color:#555555;
+	color:#ffffff;
+	font-weight:bold;
+ }
+
+ .board_paging{
+	width:900px; 
+	text-align:center; 
+	margin-top:20px;
+	}
+ .board_paging ul li{
+	display:inline-block;		/* 가로배치 */
+	}
+ .board_paging ul li a{
+	display:block; 
+	width:25px; 
+	height:25px; 
+	border:1px solid #bfbfbf; 
+	text-align:center; 
+	line-height:25px; 
+	color:#777;
+	}
+ .board_paging ul li a:hover, .board_paging ul li a.active{
+	background:#00816e; 
+	font-weight:600; 
+	color:#fff; 
+	border:1px solid #00816e;
+	}			
+				/*a:hover --- 마우스 오버했을 때 링크 상태*/
+ </style>
+ <body>
+  <div class="div_title">
+  	일반 게시판
+  </div>
+
+  <div class="div_search">
+	<select name="searchCondition" class="select1">
+		<option value="전체">전체</option>
+		<option value="subject" selected>제목</option>
+		<option value="name">글쓴이</option>
+		<option value="content">내용</option>
+	</select>
+	<input type="text" name="searchKeyword" class="input1">
+	 <button type="submit" value="검색" class="button1">검색</button>
+  </div>
+  
+  <table>
+  	<colgroup>
+		<col width="8%"/>
+		<col width="*" />
+		<col width="8%"/>
+		<col width="11%"/>
+		<col width="8%"/>
+		<col width="8%"/>
+	<colgroup>
+
+	<tr>
+		<th>번호</th>
+		<th>제목</th>
+		<th>글쓴이</th>
+		<th>작성일</th>
+		<th>조회</th>
+		<th>파일</th>
+	</tr>
+	<tr>
+		<td>352</td>
+		<td>[전자정보기사업단]2023년 RISE 아카데미...</td>
+		<td>김광동</td>
+		<td>2023-11-20</td>
+		<td>3</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>351</td>
+		<td>2023 제1회 달성 창업아이디어 공모전</td>
+		<td>김광동</td>
+		<td>2023-11-15</td>
+		<td>8</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>350</td>
+		<td>[스벅 기프티콘 제공]임담유니콘파크 수요조사</td>
+		<td>김민기</td>
+		<td>2023-11-10</td>
+		<td>21</td>
+		<td>{파일}</td>
+	</tr>
+	<tr>
+		<td>349</td>
+		<td>2023년 RISE 아카데미-2024년 ICT 산업...</td>
+		<td>김광동</td>
+		<td>2023-10-31</td>
+		<td>26</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>348</td>
+		<td>2023 ABB HACKATHON 대회 모집 공고</td>
+		<td>김광동</td>
+		<td>2023-10-24</td>
+		<td>28</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>347</td>
+		<td>청소년 재능기부 서포터즈 추가모집</td>
+		<td>배수희</td>
+		<td>2023-10-24</td>
+		<td>28</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>346</td>
+		<td>[굿네이버스와 함께하는 지구사랑 17번 산악회]</td>
+		<td>박창언</td>
+		<td>2023-10-18</td>
+		<td>24</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>345</td>
+		<td>2024년 2월말 퇴직교원 정부포상 추천대상자 공개검증</td>
+		<td>이도훈</td>
+		<td>2023-10-13</td>
+		<td>35</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>344</td>
+		<td>2023 체코/프라하 투어가이드 모집(휴학생 가능)</td>
+		<td>심현영</td>
+		<td>2023-10-13</td>
+		<td>53</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>343</td>
+		<td>[2000원 기프티콘 제공] 온라인 설문조사 부탁드립...</td>
+		<td>조효민</td>
+		<td>2023-09-26</td>
+		<td>72</td>
+		<td></td>
+	</tr>
+  </table>
+ 
+ <!-- pagination-->
+<div class="board_paging">
+	<ul>
+		<li>
+		<a class="active">1</a>
+		</li>
+		<li><a href="/article/DG183/list?pageIndex=2&">2</a></li>
+		<li><a href="/article/DG183/list?pageIndex=3&">3</a></li>
+		<li><a href="/article/DG183/list?pageIndex=4&">4</a></li>
+		<li><a href="/article/DG183/list?pageIndex=5&">5</a></li>
+		<li><a href="/article/DG183/list?pageIndex=6&">6</a></li>
+		<li><a href="/article/DG183/list?pageIndex=7&">7</a></li>
+		<li><a href="/article/DG183/list?pageIndex=8&">8</a></li>
+		<li><a href="/article/DG183/list?pageIndex=9&">9</a></li>
+		<li><a href="/article/DG183/list?pageIndex=10&">10</a></li><li>
+		<a href="/article/DG183/list?pageIndex=2&" 
+		   title="다음리스트">&gt;</a>
+		</li>
+		<li><a href="/article/DG183/list?pageIndex=36&" 
+			   title="맨 끝페이지">&gt;&gt;</a>
+		</li>
+</ul>
+</div>
+
+<!-- pagination-->
+ </body>
+</html>

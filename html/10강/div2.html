@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>CSS 위치설정 1</title>
+ </head>
+
+ <style>
+ div.fixed {
+	position:fixed;
+	top:10px;
+	right:10px;
+	width:300px;
+	border:3px solid #ffcc33;
+
+ }
+
+ div.relative {
+	position:relative;
+	top:20px;
+	left:30px;
+	width:400px;
+	height:200px;
+	border:3px solid #ffcc33;
+
+ }
+
+  div.absolute {
+	position:absolute;
+	top:80px;
+	left:0px;
+	width:200px;
+	height:100px;
+	border:3px solid red;
+
+ }
+
+ </style>
+ <body>
+ 
+ <h2>position: relative</h2>
+ <p>위치가 있는 요소:상대적위치</p>
+
+<div class="relative">
+	HTML CSS JAVASCRIPT JAVA
+	 <div class="absolute">
+	 웹 사이트 제작
+	 </div>
+</div>
+
+</body>
+</html>

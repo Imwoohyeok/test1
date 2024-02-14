@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입화면(HTML5포함)</title>
+ </head>
+ <body>
+ <!-- 탑 메뉴 S -->
+  <table border="0" width="450" 
+		 cellspacing="1" cellpadding="10" bgcolor="cccccc">
+	<tr bgcolor="skybule">
+		<th width="150"><a href="loginWrite.html">로그인</a></th>
+		<th width="150"><a href="memberAgree.html">회원가입</a></th>
+		<th width="150"><a href="boardList.html">게시판</a></th>
+	</tr>
+ </table>
+ </form>
+ <br>
+
+ <form name="frm" 
+	   method="post" 
+	   action="memberWriteSave.jsp"
+	   autocomplete="off">
+
+  <table border="0" width="800" 
+	    cellspacing="1" cellpadding="5"
+		bgcolor="cccccc"
+		align="center">
+	<tr bgcolor="ffffff">
+		<th>아이디</th>
+		<td>
+		<input type="text" 
+			   name="userid" 
+			   maxlength="20" 
+			   autofocus
+			   placeholder="아이디를 입력해주세요.">
+		<input type="button" value"중복체크">
+		</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>암호</th>
+		<td><input type="password" name="pass"
+				   placeholder="암호를 입력해주세요.">
+		</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>이름</th>
+		<td><input type="text" name="name"></td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>성별</th>
+		<td>
+		<input type="checkbox" name="gender" vaule="M">남
+		<input type="checkbox" name="gender" vaule="W">여
+		</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>학년</th>
+		<td>
+		<input type="radio" name="grade" vaule="1" checked>1학년
+		<input type="radio" name="grade" vaule="2">2학년
+		<input type="radio" name="grade" vaule="3">3학년
+		<input type="radio" name="grade" vaule="4">4학년
+		<input type="radio" name="grade" vaule="5">5학년
+		<input type="radio" name="grade" vaule="6">6학년
+		</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>생일</th>
+		<td><input type="date" name="birthday"></td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>지역</th>
+		<td><select name="area">
+				<option vaule="서울">서울</option>
+				<option vaule="경기">경기</option>
+				<option vaule="천안" selected>천안</option>
+			</select>
+		</td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<th>좋아하는색</th>
+		<td><input type="color" name="color"></td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>영어점수</th>
+		<td>
+	 <input type="range" name="eng" min="0" max="100"
+	 list="scoreList" step="1" value="0">
+	 	<datalist id="scoreList">
+			<option value="0"/>
+			<option value="10"/>
+			<option value="20"/>
+			<option value="30"/>
+			<option value="40"/>
+			<option value="50"/>
+			<option value="60"/>
+			<option value="70"/>
+			<option value="80"/>
+			<option value="90"/>
+			<option value="100"/>
+		</datalist>
+		</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>수학점수</th>
+		<td><input type="number" min="0" max="100" name="math"></td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<th>이메일</th>
+		<td><input type="email" name="email"></td>
+	</tr>
+ </table>
+
+<br><br>
+
+<div style="text-align:center;">
+<input type="submit" vaule="저장">
+<input type="reset" vaule="취소">
+
+</form>
+
+ </body>
+</html>

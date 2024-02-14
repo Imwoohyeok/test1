@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+  body {
+	font-size:12px;
+	font-family:맑은고딕; /*서체*/
+}
+a {
+	text-decoration:none; /*링크의 밑줄을 없앰*/
+	color:#ffffff; /*글자색*/
+}
+div.header { /*친구관리*/
+			width:100%;
+			height:70px;
+			text-align:center;
+			background:#808080;
+			color:#ffffff;
+			font-weight:bold;
+			font-size:20px;
+			line-height:3.5;
+}
+div.menu {	/*회원등록*/
+			width:100%;
+			height:26px;
+			background:#000000;
+			color:#ffffff;
+			line-height:2.0;	
+}
+div.section {	/*친구관리 프로그램*/
+			width:100%;
+			height:500px;
+			text-align:center;
+			background:#8ed93c;
+}
+ </body>
+</html>

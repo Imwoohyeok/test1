@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>게시판 입력 폼</title>
+ </head>
+ <body>
+				 <!-- 실습2번 게시판 입력 폼 만들기-->
+ <form name="frm" method="post" action="input_save.jsp">
+ <table border="1" width="600">
+	<tr>
+		<th>제목</th>
+		<td>
+		<input type="text" name="title" size="50">
+		</td>
+	</tr>
+
+	<tr>
+		<th>암호</th>
+		<td>
+		<input type="text" name="pass" size="50" maxlength="10">
+		</td>
+	</tr>
+
+	<tr>
+		<th>글쓴이</th>
+		<td>
+		<input type="text" name="writer" size="50">
+		</td>
+	</tr>
+
+	<tr>
+	<!-- cols :: colume rows::-->
+		<th>내용</th>
+		<td>
+		<textarea name="content" cols="50" rows="5">
+		</textarea>
+		</td>
+	</tr>
+
+	<tr>
+		<th colspan="2">
+		<input type="submit" value="저장">
+		<input type="reset" value="취소">
+		</th>
+	</tr>
+
+ </table>
+ <br>
+ 
+					<!-- 실습3번 로그인화면 만들기-->
+
+<table border="1" width="300">
+	<tr>
+		<td>아이디</td>
+		<td>
+		<input type="text" name="userid">
+		</td>
+	</tr>
+	<tr>
+		<td>암호</td>
+		<td>
+		<input type="text" name="pass">
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2">
+		<input type="submit" value="로그인">
+		</th>
+	</tr>
+</table>
+ </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>4강테이블 심화</title>
+ </head>
+ <body>
+<!-- 1. 회원정보 테이블 -->
+<!-- cellpadding:셀 내부의 간격-->
+ <table border="0" width="300" 
+		cellpadding="5"
+		cellspacing="1"
+		bgcolor="cccccc">
+ 	<tr bgcolor="#ffffff">
+		<th height="30" colspan="2">
+		<font color="blue">회원정보</font></th>
+	</tr>
+	<tr bgcolor="ffffff">
+		<th width="40%">이름</th>
+		<td width="60%">홍길동</td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<th>성별</th>
+		<td>남자</td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<td height="30"colspan="2" align="right">정보 정확률 90%이상</td>
+	</tr>
+
+ </table>
+ <br>
+ <!-- 2.달력화면 테이블 -->
+ <table border="0" width="500"
+		cellpadding="5"
+		cellspacing="1"
+		bgcolor="cccccc">
+ 	<tr align="center" bgcolor="ffffff">
+		<td colspan="7">
+		<font color="#e3e300"><b>2023년 06월 달력</b></font></td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td><font color="red">일</font></td>
+		<td><b>월</b></td>
+		<td><b>화</b></td>
+		<td><b>수</b></td>
+		<td><b>목</b></td>
+		<td><b>금</b></td>
+		<td><font color="blue">토</font></td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>1</td>
+		<td>2</td>
+		<td><font color="red">3</font></td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td><font color="red">4</font></td>
+		<td>5</td>
+		<td>6</td>
+		<td><font color="green"><b>7</b></font></td>
+		<td>8</td>
+		<td>9</td>
+		<td><font color="red">10</font></td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td><font color="red">11</font></td>
+		<td>12</td>
+		<td>13</td>
+		<td>14</td>
+		<td>15</td>
+		<td>16</td>
+		<td><font color="red">17</font></td>
+	</tr>
+</table>
+<br>
+<!-- 가로/세로 합침의 예제 -->
+
+<table border="0" width="300"
+	   cellspacing="1"
+	   cellpadding="5"
+	   bgcolor="cccccc">
+	<tr align="center" bgcolor="ffffff">
+		<td colspan="2">모집개발</td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td rowspan="2">본사</td>
+		<td>ip관리</td>
+	</tr>
+	<tr align="center" bgcolor="ffffff">
+		<td>디지털마케팅</td>
+	</tr>
+
+</table>
+<br>
+<!-- 4.쇼핑몰 목록 -->
+<p align="center"><font size="5" color="#ff9900">
+<b>【상품목록】</b></font></p>
+<table border="0" width="500" align="center" 
+	   cellpadding="5"
+	   cellspacing="1" 
+	   bgcolor="cccccc">
+	<tr bgcolor="ffffff">
+		<td  rowspan="2">
+		<img src="c:/images/java_story.PNG"></td>
+		<td>상품명:자바이야기</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<td>가 격:30,000원</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<td align="center" rowspan="2">
+		<img src="c:/images/oracle.PNG"></td>
+		<td>상품명:오라클기초</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+	<td>가 격:25,000원</td>
+	</tr>
+
+	<tr bgcolor="ffffff">
+		<td align="center" rowspan="2">
+		<img src="c:/images/jsp.PNG"></td>
+		<td>상품명:JSP마스터</td>
+	</tr>
+	<tr bgcolor="ffffff">
+		<td>가 격:28,000원</td>
+	</tr>
+</table>
+<br>
+<!-- 5.쇼핑몰 상세보기 화면 제작-->
+<table border="1" width="400">
+	<tr>
+		<td align="center" colspan="3">
+		<font color="#339900"><b>상품상세보기</b></font></td>
+	</tr>
+	<tr>
+		<td align="center" rowspan="3">상품<br>이미지</td>
+		<td>상품명</td>
+		<td>자바이야기</td>
+	</tr>
+	<tr>
+		<td>가격</td>
+		<td>25,000원</td>
+	</tr>
+	<tr>
+		<td>출판사</td>
+		<td>영진출판사</td>
+	</tr>
+</table>
+<br>
+<!-- 6.계산기-->
+<table border="1" width="300">
+	<tr>
+		<td align="right" colspan="4">0</td>
+	</tr>
+	<tr align="center">
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>+</td>
+	</tr>
+	<tr align="center">
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>-</td>
+	</tr>
+
+	<tr align="center">
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>×</td>
+	</tr>
+
+	<tr align="center">
+		<td colspan="2">=</td>
+		<td>0</td>
+		<td>÷</td>
+	</tr>
+</table>
+
+ </body>
+</html>

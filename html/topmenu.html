@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>CSS 탑메뉴 만들기</title>
+ </head>
+
+ <style>
+ ul li  {
+	font-size:12px;
+	color:#555555;
+	background-color:skyblue;
+	width:150px;
+	border:1px solid blue;			/* 셀 사이의 줄 */
+	text-align:center;
+	list-style:none;			/* 목록을 나타내는 점을 없앤다 */
+	float:left;		/*<li>들이 왼쪽에 흐르게 설정 아래있는게 위로 올라와서 오른쪽으로 온다 */
+	height:30px;
+	line-height:30px;
+ }
+ a {
+	text-decoration:none;
+ }
+ </style>
+
+ <body>
+  
+  <ul>
+	<li><a href="#">홈</a></li>
+	<li><a href="#">회원가입</a></li>
+	<li>게시판</li>
+	<li>위치</li>
+	<li>블로그</li>
+  </ul>
+ </body>
+</html>

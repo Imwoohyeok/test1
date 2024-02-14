@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+div.div1{
+	background-color:pink;
+	width:200px;
+	height:100px;
+	margin-bottom:10px;     /* 외부간격 */
+	padding-left:20px;      /* 내부간격 */
+	border:1px solid blue;  /* 굵기 종류 색상 */
+}
+div.div2{
+	background-color:yellow;     /* .div 앞에 div를 쓰면 div만 호출할 수 있다*/
+	width:200px;
+	height:150px;
+	padding:30px 20px 30px 20px; /*top right bottom left*/
+	border-top:1px solid blue;
+	border-left:10px dotted green;
+	border-right:20px dashed red;
+	border-bottom:5px double black;
+
+}
+</style>
+ <body>
+
+<div class="div1">test1</div>
+<div class="div2">test2</div>
+<table>
+	<tr>
+		<td class="div1">test3</td>
+	</tr>
+</table>
+
+ </body>
+</html>

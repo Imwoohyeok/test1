@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입 폼</title>
+ </head>
+ <body>
+               <!-- 회원가입 폼 만들기-->
+<!-- 한줄입력상자 -->
+  <form name="frm" method="post" action="input_save.jsp"> 
+
+	<table border="1" width="800">
+		<tr>
+			<th>아이디</th>
+			<td><input type="text" name="userid">
+			<input type="button" value="중복체크">
+			</td>
+		</tr>
+
+		<tr>
+			<th>패스워드</th>
+			<td><input type="text" name="pass"></td>
+		</tr>
+
+		<tr>
+			<th>이름</th>
+			<td><input type="text" name="username"
+					   value="관리자" readonly ></td>
+		</tr>
+<!-- 라디오상자 남여 -->
+		<tr>
+			<th>성별</th>
+			<td>
+			<input type="radio" name="gender" value="M">남
+			<input type="radio" name="gender" value="F">여
+			</td>
+		</tr>
+<!-- select 생년월일 -->
+		<tr>
+			<th>생일</th>
+			<td>
+			<select name="year">
+				<!-- php용어 for조건반복문 증가-->
+				<?
+				for( $y=1920; $y<=2020; $y++) {
+				?>
+
+				<option value="<?=$y?>"><?=$y?>년</option>
+				<?
+				{
+				?>
+				
+			</select>
+			<select name="month">
+				<option value="1">1월</option>
+				<option value="2">2월</option>
+				<option value="3">3월</option>
+			</select>
+			<select name="day">
+				<option value="1">1일</option>
+				<option value="2">2일</option>
+				<option value="3">3일</option>
+			</select>
+			</td>
+		</tr>
+
+		<tr>
+			<th>주소</th>
+			<td><input type="text" name="addr"></td>
+		</tr>
+<!-- 다중체크박스 -->
+		<tr>
+			<th>취미</th>
+			<td>
+				<input type="checkbox" name="hobby" value="축구">축구,
+				<input type="checkbox" name="hobby" value="야구">야구,
+				<input type="checkbox" name="hobby" value="농구">농구
+			</td>
+		</tr>
+<!-- submit=저장 reset=취소 -->
+		<tr>
+			<th colspan="2">
+				<input type="submit" value="저장">
+				<input type="reset" value="재설정">
+			</th>
+		</tr>
+
+	</table>
+</form>
+
+ </body>
+</html>

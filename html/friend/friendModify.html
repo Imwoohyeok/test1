@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+ body {
+	font-size:12px;
+	font-family:맑은고딕; /*서체*/
+}
+a {
+	text-decoration:none; /*링크의 밑줄을 없앰*/
+	color:#ffffff; /*글자색*/
+}
+</style>
+
+<body>
+<!-- Header S -->
+<div style="width:100%;
+			height:70px;
+			text-align:center;
+			background:#808080;
+			color:#ffffff;
+			font-weight:bold;
+			font-size:20px;
+			line-height:3.5;">
+	 친구관리
+</div>
+<!-- Menu S -->
+<div style="width:100%;
+			height:26px;
+			background:#000000;
+			color:#ffffff;
+			line-height:2.0;">
+	 &nbsp;&nbsp;&nbsp;
+	<a href="friendWrite.html">회원등록</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="friendList.html">회원목록조회/수정</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="friendMyList.html">친구현황조회</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="friendIndex.html">홈으로..</a>
+</div>
+<!-- Menu E -->
+
+<div style="width:100%;
+			height:500px;
+			background:#8ed93c;">
+	<br>		
+	<h2 align="center" style="">친구수정</h2>
+	<br>
+
+<!-- Section S 표-->
+ <form name="frm" method="post" action="input_save.jsp">
+<table border="1" width="800" align="center">
+	<tr>
+		<th width="30%">회원번호</th>
+		<td><input type="text"></td>
+	</tr>
+
+	<tr>
+		<th>회원ID</th>
+		<td><input type="text"></td>
+	</tr>
+
+
+	<tr>
+		<th>이름</th>
+		<td><input type="text"></td>
+	</tr>
+
+	<tr>
+		<th height="70">등급</th>
+		<td>
+		<select name="grade">
+			<option value="<?=$y?>"><?=$y?>특별회원</option>
+			<option value="<?=$y?>"><?=$y?>우수회원</option>
+			<option value="<?=$y?>"><?=$y?>일반회원</option>
+		</select>
+		</td>
+	</tr>
+
+	<tr>
+		<th>취미</th>
+		<td>
+		<input type="checkbox" name="hobby" value="독서">독서
+		<input type="checkbox" name="hobby" value="운동">운동
+		<input type="checkbox" name="hobby" value="영화">영화
+		</td>
+	</tr>
+
+	<tr>
+		<th>등록일자</th>
+		<td><input type="date" name="day"></td>
+	</tr>
+	<tr>
+		<th colspan="2">
+		<input type="submit" value="등록">
+		<input type="reset" value="조회">
+		</th>
+	</tr>
+
+</table>
+</form>
+
+</div>
+ </body>
+</html>

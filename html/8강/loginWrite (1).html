@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+table {
+	width:500px;
+	border:1px solid #ccc;
+	border-collapse:collapse; /* 셀 사이의 공백 제거*/
+}
+th,td {
+	border:1px solid #ccc;
+	padding:5px;
+}
+
+ </style>
+ <script>
+ // 메모 return false 전송 안되게 함
+function fn_action() {	
+								// 현재창.폼이름.상자이름.값
+	if(document.frm.userid.value == "") {
+		alert("아이디를 입력해주세요.");
+		document.frm.userid.focus();	// 커서의 위치
+		return false;	// 자바스크립트 함수의 종료
+	}
+
+	if(document.frm.pass.value == "") {
+		alert("암호를 입력해주세요.");
+		document.frm.pass.focus();	// 커서의 위치
+		return false;	// 자바스크립트 함수의 종료
+	}
+	document.frm.submit();    // 폼 전송 - 로그인 클릭 시
+
+}
+
+
+
+ </script>
+ <body>
+
+<font color="#555555">
+<table border="0" cellpadding="10">
+	<colgroup>
+		<col width="30%">
+		<col width="*">
+	</colgroup>
+	<tr bgcolor="skyblue">
+		<th width="150"><a href="loginWrite (1).html">로그인</a></th>
+		<th width="150"><a href="memberAgree (1).html">회원가입</a></th>
+		<th width="150"><a href="boardList (1).html">게시판</a></th>
+	</tr>
+</table>
+</font>
+
+<br><br>
+
+<form name="frm" method="post" action="loginWriteSub.jsp">
+<table border="1" width="500">
+	<tr>
+		<th>아이디</th>
+		<td><input type="text" name="userid" 
+						placeholder="아이디를 입력해주세요." autofocus></td>
+	</tr>
+	<tr>
+		<th>암호</th>
+		<td><input type="password" name="pass" 
+						placeholder="암호를 입력해주세요."></td>
+	</tr>
+	<tr>
+		<th colspan="2">
+			<input type="submit" value="로그인"  
+							onclick="fn_action(); return false;">
+			<input type="reset" value="취소">
+		</th>
+	</tr>
+</table>
+</form>
+
+ </body>
+</html>

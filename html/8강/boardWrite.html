@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>게시판 글쓰기 화면</title>
+ </head>
+ <script>
+function fn_action() {
+	
+
+}
+
+ </script>
+ <body>
+
+<!-- 탑 메뉴 S -->
+<font color="#555555">
+<table border="0" cellpadding="10">
+	<tr bgcolor="skyblue">
+		<th width="150"><a href="loginWrite (1).html">로그인</a></th>
+		<th width="150"><a href="memberAgree (1).html">회원가입</a></th>
+		<th width="150"><a href="boardList (1).html">게시판</a></th>
+	</tr>
+</table>
+</font>
+<!-- 탑 메뉴 E -->
+
+<br><br>
+
+<form name="frm" method="post" action="boardWriteSave.jsp">
+<table border="1" width="600" cellpadding="5">
+	<colgroup>
+		<col width="25%"/>
+		<col width="*" />
+	</colgroup>
+	<tr>
+		<th>제목</th>
+		<td><input type="text" name="title" autofocus></td>
+	</tr>
+	<tr>
+		<th>암호</th>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<th>이름</th>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td> <textarea name="content" cols="50" rows="7"></textarea> </td>
+	</tr>
+</table>
+
+<br><br>
+<div style="width:600px; text-align:center;">
+	<input type="submit" value="저장"
+				onclick="fn_action(); return false;">
+	<input type="reset" value="취소">
+</div>
+
+</form>
+
+ </body>
+</html>
