@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="frmLogin" method="get" action="login">
+		아이디 : <input type="text" name="user_id"><br>
+		비밀번호 : <input type="password" name="user_pw"><br>
+		<input type="hidden" name="theme" value="dark">
+		<input type="checkbox" name="subject" value="java" checked>java
+		<input type="checkbox" name="subject" value="c언어">c언어
+		<input type="checkbox" name="subject" value="JSP">JSP
+		<input type="checkbox" name="subject" value="android">안드로이드
+		<input type="submit" value="로그인">
+		
+	</form>
+	
+	<script>
+		// submit를 클릭했을 때
+		document.querySelector("[type=submit]").addEventListener("click", function(){
+			// submit 이벤트 기본 동작 차단
+			//event.preventDefault();
+			doAjax();			
+		})
+		
+		function doAjax(){
+			console.log("doAjax 실행");
+			
+			// ajax 객체 생성
+			// XMLHttpRequest: 이 객체는 비동기적인 방식으로 데이터를 주고받을 수 있다
+			let xhr = new XMLHttpRequest();
+			// 보낼 준비
+			// 쿼리 문자열인 "user_id=123&subject=a"를 포함한 요청을 보낼 것을 설정
+			xhr.open("get", "login?user_id=123&subject=a");
+			
+			// 설정한 XMLHttpRequest 객체를 통해 서버로 요청을 보낸다
+			// 서버로부터의 응답을 기다리지 않고 다음 코드를 실행함
+			// (단! 언제 끝날지 모름)
+			xhr.send();
+			
+			
+			// onload : 이 핸들러는 서버로부터 응답이 도착했을 때 호출되는 함수
+			// 다녀온 후 (응답 이후)
+			xhr.onload = function(){
+				let data = xhr.responseText; // 서버의 응답 데이터를 가져옴
+				console.log(data);
+				
+				let json = JSON.parse(data);  // JSON 형식으로 파싱하여 객체로 변환
+				console.log('k :', json.k)
+				console.log('k :', json['k'])
+				
+			}
+		}
+	</script>
+	
+</body>
+</html>

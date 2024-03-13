@@ -19,12 +19,14 @@ import javax.servlet.http.HttpServletResponse;
 //JDBC를 사용하여 Oracle 데이터베이스에 연결하고 쿼리를 실행하는 서블릿
 @WebServlet("/jdbc")
 public class JdbcServlet extends HttpServlet {
+	// 객체 직렬화 : class UID 값이 바뀌지 않게
 	private static final long serialVersionUID = 1L;
 
 	// HTTP GET 요청 처리 메서드
+	// MVC 패턴
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 // 컨트롤러 메서드 호출
-		controller(request, response);
+		controller(request, response);	
 	}
 
 	// HTTP POST 요청 처리 메서드
@@ -37,27 +39,32 @@ public class JdbcServlet extends HttpServlet {
 	protected void controller(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		try {
 			// 한글 깨짐 방지
+			// 넘어온 파라미터의 인코딩 설정을 UTF-8로 설정
 			request.setCharacterEncoding("UTF-8");
+			// HTML이 UTF-8 형식이라는 것을 브라우저에게 전달
 			response.setContentType("text/html; charset=utf-8;");
 			
-		} catch(UnsupportedEncodingException e) {
-			e.printStackTrace();
+		} catch(UnsupportedEncodingException e) {	// 예외처리
+			e.printStackTrace(); // 에러 출력
 		}
 		
 		// Oracle 데이터베이스 연결을 위한 정보 설정
-		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@112.148.46.134:51521:xe";
-		String user = "scott4_13";
+		String driver = "oracle.jdbc.driver.OracleDriver";	// 드라이버 클래스
+		String url = "jdbc:oracle:thin:@112.148.46.134:51521:xe"; // DB 연결 URL 지정
+		String user = "scott4_13"; // 사용자 이름과 암호 지정
 		String password = "tiger";
 		
 		try {
 			
 			// JDBC 드라이버 로딩
 			// Class.forName : String 변수로 class 생성
+			// Class.forName 사용 이유 : DI를 사용하기 위함
+			// DI : 추상클래스나 인터페이스에 특정한 구현을 위해
 			Class clazz = Class.forName(driver);
 			System.out.println("Oracle 드라이버 로딩 성공");
 			
 			// DB 접속
+			// Connection : DB를 연결하는 객체
 			Connection con = DriverManager.getConnection(url, user, password);
 			System.out.println("Connection 생성 성공");
 			
@@ -93,7 +100,7 @@ public class JdbcServlet extends HttpServlet {
 			ps.setString(1, name);
 			
 			// SQL 실행, 결과를 ResultSet에 저장
-			ResultSet rs = ps.executeQuery();
+			ResultSet rs = ps.executeQuery(); // 오라클에서 컨트롤enter
 			// select : executeQuery()
 			//		return : ResultSet
 			// 그 외 : executeUpdate()

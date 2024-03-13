@@ -10,8 +10,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
-
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet Filter implementation class Myname
@@ -52,14 +52,40 @@ public class MyFilter extends HttpFilter implements Filter {
 		if(request instanceof HttpServletRequest) {
 			
 			HttpServletRequest req = (HttpServletRequest) request;
-			HttpSession session = req.getSession();
 			
-			String isLogon = (String)session.getAttribute("isLogon");
+			String url = req.getRequestURI();
+			System.out.println("요청 url : "+ url);
+			
+			if(url.indexOf("login.do") != -1 
+				|| url.indexOf("login.jsp") != -1
+				|| url.indexOf("/logout") != -1
+//				|| url.indexOf(".css") != -1
+//				|| url.indexOf(".js") != -1
+				|| url.indexOf("/asset/") != -1
+				|| url.indexOf("/join.do") != -1) {
+				// 그냥 통과
+				chain.doFilter(request, response);
+			} else {
+				
+				HttpSession session = req.getSession();
+				
+				String isLogon = (String)session.getAttribute("isLogon");
+				if("OK".equals(isLogon)) {	
+					// 로그인 했다면
+					
+					chain.doFilter(request, response); // 여기로 보낸다
+				} else {
+					// 로그인을 안 했다면
+					HttpServletResponse resp = (HttpServletResponse)response;
+					resp.sendRedirect("login.jsp");
+				}
+			}
+			
 		}
 		
 		
-		// 서블릿 등의 동작
-		chain.doFilter(request, response);
+//		//서블릿 등의 동작
+//		chain.doFilter(request, response);
 		
 		long end = System.currentTimeMillis();
 		System.out.println("걸린시간[ms] : " + (end-start));

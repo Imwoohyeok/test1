@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//JdbcServlet 클래스 
 //JDBC를 사용하여 Oracle 데이터베이스에 연결하고 쿼리를 실행하는 서블릿
 @WebServlet("/init")
 public class DDLTestServlet extends HttpServlet {

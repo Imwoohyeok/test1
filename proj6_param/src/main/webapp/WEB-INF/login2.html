@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method="post" action="login2">
+	아이디 : <input type="text" name="id" id="idid"><br>
+	비밀번호 : <input type="text" name="pw" id="pwpw"><br>
+	<br>
+	<input type="submit" value="로그인">
+</form>
+
+<script>
+	document.querySelector("input[type=submit]").addEventListener("click", function(evt){
+		evt.preventDefault();
+		
+		if(document.querySelector("#idid").value.trim() == ""){
+			alert("아이디는 필수입니다.")
+		} else {
+			document.querySelector("form").submit();
+		}	
+	})
+	
+</script>
+</body>
+</html>
