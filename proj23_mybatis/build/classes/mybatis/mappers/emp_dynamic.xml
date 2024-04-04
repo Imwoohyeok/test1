@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.emp.dynamic">
+
+<!-- 	<select id="selectEmp" resultType="empDTO4"> -->
+<!-- 		select * from emp4 -->
+<!-- 	</select> -->
+
+	<select id="selectEmp" parameterType="empDTO4" resultType="empDTO4">
+	
+		select * from emp4
+		<where>
+			<if test="ename != null and ename != '' ">
+<!-- 				lower(ename) = lower(#{ename}) -->
+				and lower(ename) like '%' || lower(#{ename}) || '%'
+			</if>
+			<if test="sal != -1">
+			
+				and sal <![CDATA[ >= ]]> #{sal}
+			
+			</if>
+			<if test="job != null and job != '' ">
+				and lower(job) like '%' || lower(#{job}) || '%'
+			</if>
+
+		</where>
+	</select>
+
+	<select id="selectEmp2" parameterType="empDTO4" resultType="empDTO4">
+	
+		select * from emp4
+		<where>
+		
+			<if test="type != null and type != '' ">
+				<if test="type == 1">
+					lower(ename) like '%' || lower(#{keyword}) || '%'
+				</if>
+				<if test="type == 2">
+					and sal <![CDATA[ >= ]]> #{keyword}
+				</if>
+				<if test="type == 3">
+					and sal <![CDATA[ <= ]]> #{keyword}
+				</if>
+				<if test="type == 4">
+					and lower(job) like '%' || lower(#{keyword}) || '%'
+				</if>
+				<if test="type == 5">
+					and 
+					(
+						lower(ename) like '%' || lower(#{keyword}) || '%'
+						or
+						lower(job) like '%' || lower(#{keyword}) || '%'
+					)
+				</if>
+			</if>
+		
+		</where>
+	</select>
+</mapper>
