@@ -11,21 +11,21 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import sec01.ex01.LoggableStatement;
+
 public class EmpDAO {
 
 	// 목록 조회
 	public List<EmpDTO> selectEmp(int start, int end) {
-		List<EmpDTO> list = new ArrayList<EmpDTO>();
+		List<EmpDTO> list = new ArrayList<>();
 
 		Connection con = null;
 		PreparedStatement ps = null;
-
 		try {
 			Context ctx = new InitialContext();
 			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
 			con = dataFactory.getConnection();
 
-			// SQL 준비
 			String query = "";
 			query += " select * from (";
 			query += "     select rownum rnum, t1.* from (";
@@ -43,7 +43,7 @@ public class EmpDAO {
 			query += "             left outer join emp4 e on e.mgr = er.empno";
 			query += "             where e.mgr is not null";
 			query += "         )";
-			query += "         search depth first by empno desc set sort_empno";
+			query += "         search depth first by empno set sort_empno";
 			query += "         select * from emp_recu";
 			query += "         order by sort_empno";
 			query += "     ) t1";
@@ -54,15 +54,14 @@ public class EmpDAO {
 			ps = new LoggableStatement(con, query);
 			ps.setInt(1, start);
 			ps.setInt(2, end);
-
-			System.out.println(( (LoggableStatement)ps ).getQueryString() ) ;
 			
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
 			// SQL 실행 및 결과 확보
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				EmpDTO dto = new EmpDTO();
-
-				dto.setEmpno(rs.getInt("EMPNO"));
+				dto.setEmpno(rs.getInt("empno"));
 				dto.setEname(rs.getString("ename"));
 				dto.setMgr(rs.getInt("mgr"));
 				dto.setLv(rs.getInt("lv"));
@@ -96,31 +95,29 @@ public class EmpDAO {
 
 		return list;
 	}
-	
-	// 전체 개수 조회
+
 	public int selectTotalEmp() {
 		int totalCount = -1;
-		
+
 		Connection con = null;
 		PreparedStatement ps = null;
-		
 		try {
 			Context ctx = new InitialContext();
 			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
 			con = dataFactory.getConnection();
-			
-			// SQL 준비
+
 			String query = "";
-			query += " select count(*) as cnt from emp4";
-			
+			query += " select count(*) as cnt";
+			query += " from emp4";
+
 			ps = con.prepareStatement(query);
-			
+
 			// SQL 실행 및 결과 확보
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				totalCount = rs.getInt("cnt");
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -133,7 +130,7 @@ public class EmpDAO {
 					e.printStackTrace();
 				}
 			}
-			
+
 			if (con != null) {
 				try {
 					con.close();
@@ -143,7 +140,8 @@ public class EmpDAO {
 				}
 			}
 		}
-		
+
 		return totalCount;
 	}
+
 }

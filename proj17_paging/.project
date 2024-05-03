@@ -28,16 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/WEB-INF/lib/jstl (1).jar</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Users/admin/Downloads/jstl%20(1).jar</locationURI>
-		</link>
-		<link>
-			<name>src/main/webapp/WEB-INF/lib/standard (1).jar</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Users/admin/Downloads/standard%20(1).jar</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

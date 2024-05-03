@@ -17,21 +17,26 @@ public class CookieServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 쿠키 쓰기
+		// 쿠키 생성		// cookie(key, value)
 		Cookie cookie = new Cookie("test1", "1234");
 		// setMaxAge : 시간이 지나면 없어짐
 		cookie.setMaxAge(60 * 60 * 24); // 86400초
-		response.addCookie(cookie);
+		response.addCookie(cookie); // 생성된 쿠키를 브라우저로 전송
 
+		// cookie2 생성
 		Cookie cookie2 = new Cookie("test2", "한글");
 		response.addCookie(cookie2);
 		
 		String encode = URLEncoder.encode("한글2", "utf-8");
 		System.out.println(encode);
+		
+		// cookie3 생성
 		Cookie cookie3 = new Cookie("test3", encode);
 		response.addCookie(cookie3);
 		
 		// 쿠키 읽기
+		// 쿠키 정보요청한 후 
+		// 쿠키 정보를 배열로 가져옴
 		Cookie[] cookies = request.getCookies();
 		if(cookies != null) {
 			for(int i=0; i<cookies.length; i++) {
